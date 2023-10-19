@@ -45,6 +45,10 @@ const toggle = (e,num) => {
         setCount(++count);
       }
     }
+    if(count===9)
+    {
+      won("y");
+    }
     checkWin();
 }
 
@@ -92,6 +96,10 @@ const won = (winner) => {
   else if(winner==="o")
   {
     titleRef.current.innerHTML = `Congratulations:  <img src=${circle_icon}>`
+  }
+  else if(winner==="y")
+  {
+    titleRef.current.innerHTML = `Draw`
   }
 }
 
